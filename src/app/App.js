@@ -2,8 +2,7 @@ import '../sass/main.scss'
 
 function App() {
   return (
-
-    <button className='button'>ClickMe</button>
+    <h1>TEST</h1>
   );
 }
 
