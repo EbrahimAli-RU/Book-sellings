@@ -1,8 +1,10 @@
 import '../sass/main.scss'
 
+import Header from '../container/layout/Header'
+
 function App() {
   return (
-    <h1>TEST</h1>
+    <Header />
   );
 }
 
