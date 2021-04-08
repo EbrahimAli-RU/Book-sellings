@@ -4,9 +4,11 @@
 
 //COMPONENT
 @import 'component/_card';
+@import 'component/dropdownInput';
 
 //LAYOUT 
 @import 'layout/header';
+@import 'layout/sidebar';
 
 //PAGES
 @import 'pages/home';
