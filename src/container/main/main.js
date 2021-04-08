@@ -8,12 +8,12 @@ const Main = () => {
                 <SideBar />
             </div>
             <main className='cards__container'>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Card title='A Passage to the English Language A Passage to the English Language' price={125} />
+                <Card title='A Passage to the English Language' price={125} />
+                <Card title='A Passage to the English Language' price={125} />
+                <Card title='A Passage to the English Language' price={125} />
+                <Card title='A Passage to the English Language' price={125} />
+                <Card title='A Passage to the English Language' price={125} />
             </main>
         </div>
     )
