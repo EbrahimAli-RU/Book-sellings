@@ -3,10 +3,13 @@
 @import 'base/typography.scss';
 
 //COMPONENT
-
+@import 'component/_card';
 
 //LAYOUT 
 @import 'layout/header';
+
+//PAGES
+@import 'pages/home';
 
 //UTILS
 @import 'utils/function';
