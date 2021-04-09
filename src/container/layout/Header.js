@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import * as action from '../../redux/actions/book'
 
@@ -7,6 +7,9 @@ import user from '../../assets/img/user.jpg'
 import Icon from '../../assets/img/sprite.svg'
 
 const Header = (props) => {
+    useEffect(() => {
+        props.searchBookHandler();
+    }, [props])
 
     const inputHandler = (e) => {
         props.searchDataHandler(e.target.value)
@@ -16,7 +19,9 @@ const Header = (props) => {
             <img src={logo} alt="trillo logo" className="logo" />
             <form action="#" className="search">
                 <input type="text" value={props.searchData} onChange={inputHandler} className="search__input" placeholder="Search Books...." />
-                <button className="search__button">
+                <button
+                    onClick={() => props.searchBookHandler(props.searchData)}
+                    className="search__button">
                     <svg className="search__icon">
                         <use xlinkHref={`${Icon}#icon-magnifying-glass`}></use>
                     </svg>
@@ -51,7 +56,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        searchDataHandler: (value) => dispatch(action.searchData(value))
+        searchDataHandler: (value) => dispatch(action.searchData(value)),
+        searchBookHandler: (searchBy) => dispatch(action.fetchBook(searchBy))
     }
 }
 

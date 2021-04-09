@@ -16,7 +16,7 @@ export const startBookFetching = () => {
 
 export const failBookFetching = () => {
     return {
-        type: actionTypes.FETCH_BOOKS_START
+        type: actionTypes.FETCH_BOOKS_FAIL
     }
 }
 
@@ -27,12 +27,16 @@ export const successBookFetching = (data) => {
     }
 }
 
-export const fetchBook = (searchBy) => {
-    return dispach => {
-        axios.get(`/books?slug=${searchBy}`).then(res => {
-            console.log(res.data.data)
+export const fetchBook = (searchBy = '') => {
+    return dispatch => {
+        dispatch(startBookFetching())
+        axios.get(`/book?slug=${searchBy}`).then(res => {
+            dispatch(successBookFetching(res.data.data.books));
+            dispatch(failBookFetching())
+            console.log(res.data.data.books)
         }).catch(err => {
-            console.log(err)
+            dispatch(failBookFetching())
+            console.log(err.response)
         })
     }
 }

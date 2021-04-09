@@ -53,6 +53,7 @@
 
     &__button {
         border: none;
+        cursor: pointer;
         background-color: var(--color-Grey-light-2);
 
         &:focus {
