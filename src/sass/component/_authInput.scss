@@ -1,5 +1,5 @@
 .input__container {
-
+    height: 10vh;
     width: 90%;
     margin: 2rem auto;
     display: block;
@@ -17,8 +17,8 @@
     &[data-error]::after{
         content: attr(data-error);
         color: red;
-        margin-left: 18px;
-        font-size: 12px;
+        
+        font-size: 1.2rem;
     }
 
     &__auth-input {
@@ -31,10 +31,6 @@
         color: var(--color-Grey-dark-2);
         border: 1px solid var(--color-Grey-dark-2);
         border-radius: 4px;
-
-        &:focus {
-            background-color: #fff;
-        }
     }
 
 }

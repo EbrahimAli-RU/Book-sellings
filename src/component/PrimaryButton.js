@@ -1,6 +1,6 @@
-const PrimaryButton = () => {
+const PrimaryButton = ({ handler }) => {
     return (
-        <button className='butn' >Submit</button>
+        <button onClick={handler} className='butn' >Submit</button>
     )
 }
 
