@@ -1,19 +1,17 @@
 import '../sass/main.scss'
+import { Switch, Route } from 'react-router-dom'
 
-import Header from '../container/layout/Header'
-import Main from '../container/main/main'
 import Signin from '../container/auth/SignIn'
-import Signup from '../container/auth/SignUp'
 import SignUp from '../container/auth/SignUp'
+import Router from './Route/Router'
 
 function App() {
   return (
-    <>
-      {/* <Header />
-      <Main /> */}
-      <Signin />
-      {/* <SignUp /> */}
-    </>
+    <Switch>
+      <Route path='/user/login' component={Signin} />
+      <Route path='/user/signup' component={SignUp} />
+      <Route path='/' component={Router} />
+    </Switch>
   );
 }
 
