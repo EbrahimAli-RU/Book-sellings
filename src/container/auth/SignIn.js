@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Input from '../../component/authInput/AuthInput'
 import Button from '../../component/PrimaryButton'
+import { userInputHandler } from '../../utils/inputHandler'
 
 const signinObj = {
     email: {
@@ -18,8 +19,13 @@ const signinObj = {
 const SignIn = () => {
     const [loginData, setLoginData] = useState(signinObj)
 
-    const inputHandler = () => {
-
+    const inputHandler = (e) => {
+        const newData = userInputHandler(e, loginData)
+        setLoginData(newData);
+    }
+    const loginHandler = (e) => {
+        e.preventDefault();
+        console.log(loginData);
     }
     return (
         <div className='auth__container'>
@@ -28,7 +34,8 @@ const SignIn = () => {
             <Input type='password' value={loginData.password.value.value} error={loginData.password.error} message={loginData.password.message} handler={inputHandler} name='password' placeholder='Password' />
             <input className='auth__container-remember' type='checkbox' /> Remember me
             <a className='auth__container-forgot' href='/'> forgot password?</a>
-            <Button />
+            <Button handler={loginHandler} />
+            <p>New Member?<a className='auth__container-forgot' href='/'>Sign up</a></p>
         </div>
     )
 }
